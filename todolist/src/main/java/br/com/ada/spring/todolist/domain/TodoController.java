@@ -18,23 +18,12 @@ public class TodoController {
     }
 
 
-//    @GetMapping("/todo-item")
-//    public void inserirTodoItem() {
-//        ToDoItem todoItem = new ToDoItem();
-//        todoItem.setTitulo("Acordar");
-//
-//        todoItemRepository.save(todoItem);
+   @GetMapping("/todo-item")
+   public void inserirTodoItem() {
+       ToDoItem todoItem = new ToDoItem();
+       todoItem.setTitulo("Acordar");
 
-    @PostMapping("/todo-item")
-    public ToDoItem cadastrarItem(@RequestBody ToDoItem toDoItem) {
-        ToDoItem novoTodoItem = todoItemRepository.save(toDoItem);
-        return novoTodoItem;
-    }
-
-    @GetMapping("/todo-item")
-    public List<ToDoItem> buscarTodos() {
-       List<ToDoItem> listaTotal = todoItemRepository.findAll();
-       return listaTotal;
+       todoItemRepository.save(todoItem);
 
     }
 }
